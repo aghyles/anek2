@@ -19,7 +19,7 @@
                 </dd>
                 <dt><span jhiTranslate="t04JhApp.nageur.date_naissance">Date Naissance</span></dt>
                 <dd>
-                    <span>{{nageur.date_naissance}}</span>
+                    <span>{{nageur.dateNaissance}}</span>
                 </dd>
                 <dt><span jhiTranslate="t04JhApp.nageur.tel">Tel</span></dt>
                 <dd>
@@ -27,12 +27,12 @@
                 </dd>
                 <dt><span jhiTranslate="t04JhApp.nageur.hauraire_etude">Hauraire Etude</span></dt>
                 <dd>
-                    <span>{{nageur.hauraire_etude}}</span>
+                    <span>{{nageur.hauraireEtude}}</span>
                 </dd>
                 <dt><span jhiTranslate="t04JhApp.nageur.groupes">Groupes</span></dt>
                 <dd>
                     <div *ngIf="nageur.groupes">
-                        <a [routerLink]="['/groupes', nageur.groupes?.id, 'view']">{{nageur.groupes?.Groupe}}</a>
+                        <a [routerLink]="['/groupes', nageur.groupes?.id, 'view']">{{nageur.groupes?.groupes}}</a>
                     </div>
                 </dd>
             </dl>

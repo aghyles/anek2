@@ -6,9 +6,9 @@ export interface INageur {
   licence?: string;
   nom?: string;
   prenom?: string;
-  date_naissance?: Moment;
+  dateNaissance?: Moment;
   tel?: number;
-  hauraire_etude?: string;
+  hauraireEtude?: string;
   groupes?: IGroupes;
 }
 
@@ -18,9 +18,9 @@ export class Nageur implements INageur {
     public licence?: string,
     public nom?: string,
     public prenom?: string,
-    public date_naissance?: Moment,
+    public dateNaissance?: Moment,
     public tel?: number,
-    public hauraire_etude?: string,
+    public hauraireEtude?: string,
     public groupes?: IGroupes
   ) {}
 }

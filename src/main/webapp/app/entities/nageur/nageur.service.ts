@@ -52,14 +52,14 @@ export class NageurService {
 
   protected convertDateFromClient(nageur: INageur): INageur {
     const copy: INageur = Object.assign({}, nageur, {
-      date_naissance: nageur.date_naissance != null && nageur.date_naissance.isValid() ? nageur.date_naissance.format(DATE_FORMAT) : null
+      dateNaissance: nageur.dateNaissance != null && nageur.dateNaissance.isValid() ? nageur.dateNaissance.format(DATE_FORMAT) : null
     });
     return copy;
   }
 
   protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
     if (res.body) {
-      res.body.date_naissance = res.body.date_naissance != null ? moment(res.body.date_naissance) : null;
+      res.body.dateNaissance = res.body.dateNaissance != null ? moment(res.body.dateNaissance) : null;
     }
     return res;
   }
@@ -67,7 +67,7 @@ export class NageurService {
   protected convertDateArrayFromServer(res: EntityArrayResponseType): EntityArrayResponseType {
     if (res.body) {
       res.body.forEach((nageur: INageur) => {
-        nageur.date_naissance = nageur.date_naissance != null ? moment(nageur.date_naissance) : null;
+        nageur.dateNaissance = nageur.dateNaissance != null ? moment(nageur.dateNaissance) : null;
       });
     }
     return res;

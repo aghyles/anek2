@@ -37,7 +37,8 @@
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [
-      "en"
+      "en",
+      "fr"
     ],
     "blueprints": [],
     "herokuAppName": "t-04-jh",

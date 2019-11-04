@@ -35,12 +35,12 @@
                 <td>{{nageur.licence}}</td>
                 <td>{{nageur.nom}}</td>
                 <td>{{nageur.prenom}}</td>
-                <td>{{nageur.date_naissance | date:'mediumDate'}}</td>
+                <td>{{nageur.dateNaissance | date:'mediumDate'}}</td>
                 <td>{{nageur.tel}}</td>
-                <td>{{nageur.hauraire_etude}}</td>
+                <td>{{nageur.hauraireEtude}}</td>
                 <td>
                     <div *ngIf="nageur.groupes">
-                        <a [routerLink]="['/groupes', nageur.groupes?.id, 'view' ]" >{{nageur.groupes?.Groupe}}</a>
+                        <a [routerLink]="['/groupes', nageur.groupes?.id, 'view' ]" >{{nageur.groupes?.groupes}}</a>
                     </div>
                 </td>
                 <td class="text-right">

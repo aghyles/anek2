@@ -98,9 +98,9 @@ public class NageurResourceIT {
             .licence(DEFAULT_LICENCE)
             .nom(DEFAULT_NOM)
             .prenom(DEFAULT_PRENOM)
-            .date_naissance(DEFAULT_DATE_NAISSANCE)
+            .dateNaissance(DEFAULT_DATE_NAISSANCE)
             .tel(DEFAULT_TEL)
-            .hauraire_etude(DEFAULT_HAURAIRE_ETUDE);
+            .hauraireEtude(DEFAULT_HAURAIRE_ETUDE);
         return nageur;
     }
     /**
@@ -114,9 +114,9 @@ public class NageurResourceIT {
             .licence(UPDATED_LICENCE)
             .nom(UPDATED_NOM)
             .prenom(UPDATED_PRENOM)
-            .date_naissance(UPDATED_DATE_NAISSANCE)
+            .dateNaissance(UPDATED_DATE_NAISSANCE)
             .tel(UPDATED_TEL)
-            .hauraire_etude(UPDATED_HAURAIRE_ETUDE);
+            .hauraireEtude(UPDATED_HAURAIRE_ETUDE);
         return nageur;
     }
 
@@ -143,9 +143,9 @@ public class NageurResourceIT {
         assertThat(testNageur.getLicence()).isEqualTo(DEFAULT_LICENCE);
         assertThat(testNageur.getNom()).isEqualTo(DEFAULT_NOM);
         assertThat(testNageur.getPrenom()).isEqualTo(DEFAULT_PRENOM);
-        assertThat(testNageur.getDate_naissance()).isEqualTo(DEFAULT_DATE_NAISSANCE);
+        assertThat(testNageur.getDateNaissance()).isEqualTo(DEFAULT_DATE_NAISSANCE);
         assertThat(testNageur.getTel()).isEqualTo(DEFAULT_TEL);
-        assertThat(testNageur.getHauraire_etude()).isEqualTo(DEFAULT_HAURAIRE_ETUDE);
+        assertThat(testNageur.getHauraireEtude()).isEqualTo(DEFAULT_HAURAIRE_ETUDE);
     }
 
     @Test
@@ -186,7 +186,7 @@ public class NageurResourceIT {
             .andExpect(jsonPath("$.[*].tel").value(hasItem(DEFAULT_TEL)))
             .andExpect(jsonPath("$.[*].hauraire_etude").value(hasItem(DEFAULT_HAURAIRE_ETUDE)));
     }
-    
+
     @Test
     @Transactional
     public void getNageur() throws Exception {
@@ -230,9 +230,9 @@ public class NageurResourceIT {
             .licence(UPDATED_LICENCE)
             .nom(UPDATED_NOM)
             .prenom(UPDATED_PRENOM)
-            .date_naissance(UPDATED_DATE_NAISSANCE)
+            .dateNaissance(UPDATED_DATE_NAISSANCE)
             .tel(UPDATED_TEL)
-            .hauraire_etude(UPDATED_HAURAIRE_ETUDE);
+            .hauraireEtude(UPDATED_HAURAIRE_ETUDE);
 
         restNageurMockMvc.perform(put("/api/nageurs")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -246,9 +246,9 @@ public class NageurResourceIT {
         assertThat(testNageur.getLicence()).isEqualTo(UPDATED_LICENCE);
         assertThat(testNageur.getNom()).isEqualTo(UPDATED_NOM);
         assertThat(testNageur.getPrenom()).isEqualTo(UPDATED_PRENOM);
-        assertThat(testNageur.getDate_naissance()).isEqualTo(UPDATED_DATE_NAISSANCE);
+        assertThat(testNageur.getDateNaissance()).isEqualTo(UPDATED_DATE_NAISSANCE);
         assertThat(testNageur.getTel()).isEqualTo(UPDATED_TEL);
-        assertThat(testNageur.getHauraire_etude()).isEqualTo(UPDATED_HAURAIRE_ETUDE);
+        assertThat(testNageur.getHauraireEtude()).isEqualTo(UPDATED_HAURAIRE_ETUDE);
     }
 
     @Test

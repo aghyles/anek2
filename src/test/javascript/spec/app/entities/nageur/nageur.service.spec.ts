@@ -31,7 +31,7 @@ describe('Service Tests', () => {
       it('should find an element', () => {
         const returnedFromService = Object.assign(
           {
-            date_naissance: currentDate.format(DATE_FORMAT)
+            dateNaissance: currentDate.format(DATE_FORMAT)
           },
           elemDefault
         );
@@ -49,13 +49,13 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 0,
-            date_naissance: currentDate.format(DATE_FORMAT)
+            dateNaissance: currentDate.format(DATE_FORMAT)
           },
           elemDefault
         );
         const expected = Object.assign(
           {
-            date_naissance: currentDate
+            dateNaissance: currentDate
           },
           returnedFromService
         );
@@ -74,16 +74,16 @@ describe('Service Tests', () => {
             licence: 'BBBBBB',
             nom: 'BBBBBB',
             prenom: 'BBBBBB',
-            date_naissance: currentDate.format(DATE_FORMAT),
+            dateNaissance: currentDate.format(DATE_FORMAT),
             tel: 1,
-            hauraire_etude: 'BBBBBB'
+            hauraireEtude: 'BBBBBB'
           },
           elemDefault
         );
 
         const expected = Object.assign(
           {
-            date_naissance: currentDate
+            dateNaissance: currentDate
           },
           returnedFromService
         );
@@ -102,15 +102,15 @@ describe('Service Tests', () => {
             licence: 'BBBBBB',
             nom: 'BBBBBB',
             prenom: 'BBBBBB',
-            date_naissance: currentDate.format(DATE_FORMAT),
+            dateNaissance: currentDate.format(DATE_FORMAT),
             tel: 1,
-            hauraire_etude: 'BBBBBB'
+            hauraireEtude: 'BBBBBB'
           },
           elemDefault
         );
         const expected = Object.assign(
           {
-            date_naissance: currentDate
+            dateNaissance: currentDate
           },
           returnedFromService
         );

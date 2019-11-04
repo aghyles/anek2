@@ -32,14 +32,14 @@ public class Nageur implements Serializable {
     @Column(name = "prenom")
     private String prenom;
 
-    @Column(name = "date_naissance")
-    private LocalDate date_naissance;
+    @Column(name = "dateNaissance")
+    private LocalDate dateNaissance;
 
     @Column(name = "tel")
     private Integer tel;
 
-    @Column(name = "hauraire_etude")
-    private String hauraire_etude;
+    @Column(name = "hauraireEtude")
+    private String hauraireEtude;
 
     @ManyToOne
     private Groupes groupes;
@@ -92,17 +92,17 @@ public class Nageur implements Serializable {
         this.prenom = prenom;
     }
 
-    public LocalDate getDate_naissance() {
-        return date_naissance;
+    public LocalDate getDateNaissance() {
+        return dateNaissance;
     }
 
-    public Nageur date_naissance(LocalDate date_naissance) {
-        this.date_naissance = date_naissance;
+    public Nageur dateNaissance(LocalDate date_naissance) {
+        this.dateNaissance = dateNaissance;
         return this;
     }
 
-    public void setDate_naissance(LocalDate date_naissance) {
-        this.date_naissance = date_naissance;
+    public void setDateNaissance(LocalDate date_naissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public Integer getTel() {
@@ -118,17 +118,17 @@ public class Nageur implements Serializable {
         this.tel = tel;
     }
 
-    public String getHauraire_etude() {
-        return hauraire_etude;
+    public String getHauraireEtude() {
+        return hauraireEtude;
     }
 
-    public Nageur hauraire_etude(String hauraire_etude) {
-        this.hauraire_etude = hauraire_etude;
+    public Nageur hauraireEtude(String hauraire_etude) {
+        this.hauraireEtude = hauraireEtude;
         return this;
     }
 
-    public void setHauraire_etude(String hauraire_etude) {
-        this.hauraire_etude = hauraire_etude;
+    public void setHauraireEtude(String hauraire_etude) {
+        this.hauraireEtude = hauraireEtude;
     }
 
     public Groupes getGroupes() {
@@ -168,9 +168,9 @@ public class Nageur implements Serializable {
             ", licence='" + getLicence() + "'" +
             ", nom='" + getNom() + "'" +
             ", prenom='" + getPrenom() + "'" +
-            ", date_naissance='" + getDate_naissance() + "'" +
+            ", dateNaissance='" + getDateNaissance() + "'" +
             ", tel=" + getTel() +
-            ", hauraire_etude='" + getHauraire_etude() + "'" +
+            ", hauraireEtude='" + getHauraireEtude() + "'" +
             "}";
     }
 }

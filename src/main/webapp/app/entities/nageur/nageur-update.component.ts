@@ -21,16 +21,16 @@ export class NageurUpdateComponent implements OnInit {
   isSaving: boolean;
 
   groupes: IGroupes[];
-  date_naissanceDp: any;
+  dateNaissanceDp: any;
 
   editForm = this.fb.group({
     id: [],
     licence: [],
     nom: [],
     prenom: [],
-    date_naissance: [],
+    dateNaissance: [],
     tel: [],
-    hauraire_etude: [],
+    hauraireEtude: [],
     groupes: []
   });
 
@@ -62,9 +62,9 @@ export class NageurUpdateComponent implements OnInit {
       licence: nageur.licence,
       nom: nageur.nom,
       prenom: nageur.prenom,
-      date_naissance: nageur.date_naissance,
+      dateNaissance: nageur.dateNaissance,
       tel: nageur.tel,
-      hauraire_etude: nageur.hauraire_etude,
+      hauraireEtude: nageur.hauraireEtude,
       groupes: nageur.groupes
     });
   }
@@ -90,9 +90,9 @@ export class NageurUpdateComponent implements OnInit {
       licence: this.editForm.get(['licence']).value,
       nom: this.editForm.get(['nom']).value,
       prenom: this.editForm.get(['prenom']).value,
-      date_naissance: this.editForm.get(['date_naissance']).value,
+      dateNaissance: this.editForm.get(['dateNaissance']).value,
       tel: this.editForm.get(['tel']).value,
-      hauraire_etude: this.editForm.get(['hauraire_etude']).value,
+      hauraireEtude: this.editForm.get(['hauraireEtude']).value,
       groupes: this.editForm.get(['groupes']).value
     };
   }
