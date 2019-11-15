@@ -30,6 +30,7 @@ export class NageurComponent implements OnInit, OnDestroy {
   predicate: any;
   previousPage: any;
   reverse: any;
+  public isCollapsed = false;
 
   constructor(
     protected nageurService: NageurService,

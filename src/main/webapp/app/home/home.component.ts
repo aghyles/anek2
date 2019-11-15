@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   account: Account;
   authSubscription: Subscription;
   modalRef: NgbModalRef;
+  staticAlertClosed = false;
 
   constructor(
     private accountService: AccountService,
@@ -28,6 +29,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.account = account;
     });
     this.registerAuthenticationSuccess();
+
+    setTimeout(() => this.staticAlertClosed = true, 5000);
   }
 
   registerAuthenticationSuccess() {

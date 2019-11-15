@@ -58,7 +58,7 @@ Generic styles
 
 .jh-card {
   padding: 1.5%;
-  margin-top: 20px;
+  margin-top: 4em;
   border: none;
 }
 
@@ -162,22 +162,7 @@ entity detail page css
   }
 }
 
-/* ==========================================================================
-ui bootstrap tweaks
-========================================================================== */
-.nav,
-.pagination,
-.carousel,
-.panel-title a {
-  cursor: pointer;
-}
 
-.thread-dump-modal-lock {
-  max-width: 450px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
 
@@ -187,4 +172,6 @@ ui bootstrap tweaks
 }
 .alert-warning{
   background-color: #80d8ff;
+  border-color: #414fe6;
 }
+

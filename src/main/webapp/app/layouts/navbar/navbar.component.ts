@@ -60,6 +60,7 @@ export class NavbarComponent implements OnInit {
     return this.accountService.isAuthenticated();
   }
 
+
   login() {
     this.modalRef = this.loginModalService.open();
   }

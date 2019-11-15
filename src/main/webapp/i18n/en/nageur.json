@@ -3,9 +3,9 @@
     "nageur": {
       "home": {
         "title": "Nageurs",
-        "createLabel": "Create a new Nageur",
-        "createOrEditLabel": "Create or edit a Nageur",
-        "notFound": "No Nageurs found"
+        "createLabel": "Create a new Swimer",
+        "createOrEditLabel": "Create or edit a Swimer",
+        "notFound": "No Swimer found"
       },
       "created": "A new Nageur is created with identifier {{ param }}",
       "updated": "A Nageur is updated with identifier {{ param }}",

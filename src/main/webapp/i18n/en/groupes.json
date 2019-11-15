@@ -2,8 +2,8 @@
   "t04JhApp": {
     "groupes": {
       "home": {
-        "title": "Groupes",
-        "createLabel": "Create a new Groupes",
+        "title": "Groupe",
+        "createLabel": "Createe a new Groupes",
         "createOrEditLabel": "Create or edit a Groupes",
         "notFound": "No Groupes found"
       },

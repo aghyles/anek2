@@ -11,7 +11,7 @@
       "updated": "Un groupe est mis à jour avec l'identifiant {{ param }}",
       "deleted": "Un groupe est supprimé avec l'identifiant {{ param }}",
       "delete": {
-        "question": "\nÊtes-vous sûr de vouloir supprimer les groupes?{{ id }}?"
+        "question": "Êtes-vous sûr de vouloir supprimer les groupes?{{ id }}?"
       },
       "detail": {
         "title": "Groupes"
