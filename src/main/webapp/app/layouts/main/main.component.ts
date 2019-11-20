@@ -8,6 +8,8 @@ import { JhiLanguageHelper } from 'app/core/language/language.helper';
   templateUrl: './main.component.html'
 })
 export class JhiMainComponent implements OnInit {
+  openLeft = true;
+  openRight = true;
   constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router) {}
 
   private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {

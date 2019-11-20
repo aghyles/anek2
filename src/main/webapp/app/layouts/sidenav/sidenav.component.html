@@ -1,0 +1,127 @@
+<jhi-navbar [inputSideNav]="sidenav0"></jhi-navbar>
+<mat-sidenav-container>
+  <!--  <mat-sidenav [(opened)]="opened" mode="side">Left</mat-sidenav><!-mode=over=push=side-->
+ <!--  <mat-sidenav mode="side" position="end" [(closed)]="openRight">Right</mat-sidenav>-->
+    <mat-sidenav  class="sidenavleft" #sidenav0 mode="side" opened="true" >
+        <!---------------------------------------------------------------------------------------------->
+        <br><br>
+         <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="false" [ngSwitch]="isAuthenticated()" >
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/" >
+                    <span>
+                        <fa-icon icon="home"></fa-icon>
+                        <span jhiTranslate="global.menu.home">Home</span>
+                    </span>
+                    </a>
+                </li>
+
+                <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+                <div class="sidebar-divider my-0"></div>
+                <!-- Custom Application Name = Suivi Athlète -->
+                <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" >
+                    <span>
+                        <fa-icon icon="swimming-pool"></fa-icon>
+                        <span jhiTranslate="global.menu.appli">
+                            Suivi Athlètes
+                        </span>
+                    </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                        <li>
+                            <a class="dropdown-item" routerLink="groupes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                <fa-icon icon="address-card" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.entities.groupes">Groupes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="nageur" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                                <fa-icon icon="swimmer" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.entities.nageur">Nageur</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    </ul>
+                </li>
+                <div class="sidebar-divider"></div>
+                <!-- -->
+                <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
+                    <span>
+                        <fa-icon icon="th-list"></fa-icon>
+                        <span jhiTranslate="global.menu.entities.main">
+                            Entities
+                        </span>
+                    </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                        <li>
+                            <a class="dropdown-item" routerLink="groupes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                                <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.entities.groupes">Groupes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" routerLink="nageur" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                                <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                                <span jhiTranslate="global.menu.entities.nageur">Nageur</span>
+                            </a>
+                        </li>
+                        <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    </ul>
+                </li>
+
+                <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
+                    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
+                    <span>
+                        <fa-icon icon="flag"></fa-icon>
+                        <span jhiTranslate="global.menu.language">Language</span>
+                    </span>
+                    </a>
+                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="languagesnavBarDropdown">
+                        <li *ngFor="let language of languages">
+                            <a class="dropdown-item" [jhiActiveMenu]="language" href="javascript:void(0);" (click)="changeLanguage(language);">{{language | findLanguageFromKey}}</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+
+        <!---------------------------------------------------------------------------------------------->
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-sidenav class="sidenavRight" #sidenav1  position="end" mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+                     (closed)="events.push('close!')">
+            <!-------------------------------------------------------------------------------------------->
+
+            <br><br>
+            Iberraken Aghiles
+
+            <!-------------------------------------------------------------------------------------------->
+
+        </mat-sidenav>
+
+        <!--<p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+        <p><button mat-button (click)="sidenav0.toggle()">sidenav.toggle()</button></p>
+        <p>Events:</p>
+        <div class="example-events">
+            <div *ngFor="let e of events">{{e}}</div>
+        </div>-->
+
+        <div class="">
+            <div class="card jh-card">
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+            </div>
+        </div>-->
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

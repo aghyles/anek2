@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from 'app/core/login/login.service';
 import { JhiLanguageService } from 'ng-jhipster';
-import { SessionStorageService } from 'ngx-webstorage';
-
-import { VERSION } from 'app/app.constants';
 import { JhiLanguageHelper } from 'app/core/language/language.helper';
+import { SessionStorageService } from 'ngx-webstorage';
 import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
-import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
+import { Router } from '@angular/router';
+import { VERSION } from 'app/app.constants';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'jhi-sidenavbar',
-  templateUrl: './sidenavbar.component.html',
-  styleUrls: ['sidenavbar.scss']
+  selector: 'jhi-sidenav',
+  templateUrl: 'sidenav.component.html',
+  styleUrls: ['sidenav.scss']
 })
-export class SideNavbarComponent implements OnInit {
+export class SidenavComponent implements OnInit {
+  events: string[] = [];
+  opened: false;
+
   inProduction: boolean;
   isNavbarCollapsed: boolean;
   languages: any[];
@@ -40,7 +42,6 @@ export class SideNavbarComponent implements OnInit {
 
   ngOnInit() {
     this.languages = this.languageHelper.getAll();
-
     this.profileService.getProfileInfo().subscribe(profileInfo => {
       this.inProduction = profileInfo.inProduction;
       this.swaggerEnabled = profileInfo.swaggerEnabled;
@@ -60,7 +61,6 @@ export class SideNavbarComponent implements OnInit {
     return this.accountService.isAuthenticated();
   }
 
-
   login() {
     this.modalRef = this.loginModalService.open();
   }
@@ -72,6 +72,10 @@ export class SideNavbarComponent implements OnInit {
   }
 
   toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  toggleSideNavbar() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
 

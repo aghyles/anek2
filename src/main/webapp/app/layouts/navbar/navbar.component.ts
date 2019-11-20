@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -10,6 +10,7 @@ import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'jhi-navbar',
@@ -23,6 +24,7 @@ export class NavbarComponent implements OnInit {
   swaggerEnabled: boolean;
   modalRef: NgbModalRef;
   version: string;
+  @Input() inputSideNav: MatSidenav;
 
   constructor(
     private loginService: LoginService,
@@ -36,6 +38,7 @@ export class NavbarComponent implements OnInit {
   ) {
     this.version = VERSION ? (VERSION.toLowerCase().startsWith('v') ? VERSION : 'v' + VERSION) : '';
     this.isNavbarCollapsed = true;
+    this.toggleSideNavbar();
   }
 
   ngOnInit() {
@@ -60,7 +63,6 @@ export class NavbarComponent implements OnInit {
     return this.accountService.isAuthenticated();
   }
 
-
   login() {
     this.modalRef = this.loginModalService.open();
   }
@@ -72,6 +74,10 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  toggleSideNavbar() {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
 

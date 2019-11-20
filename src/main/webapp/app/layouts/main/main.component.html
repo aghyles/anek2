@@ -1,17 +1,23 @@
 <jhi-page-ribbon></jhi-page-ribbon>
 <div>
-    <router-outlet name="navbar"></router-outlet>
-</div>
-<div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
-        <router-outlet name="popup"></router-outlet>
-    </div>
 
-    <div>
-        <router-outlet name="sidenavbar"></router-outlet>
-    </div>
+
+    <jhi-sidenav> </jhi-sidenav>
+
+<!--
+
+    <div class="">
+        <div class="card jh-card">
+            <router-outlet></router-outlet>
+            <router-outlet name="popup"></router-outlet>
+        </div>
+    </div>-->
 
     <jhi-footer></jhi-footer>
+    <!--<router-outlet name="sidenav"></router-outlet>-->
+
+
 </div>
+
+
 

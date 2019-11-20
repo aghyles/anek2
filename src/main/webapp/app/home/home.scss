@@ -33,6 +33,7 @@ Main page styles
   }
 
   .container-fluid {
+    display: inline-block;
     padding: 60px 25px;
   }
 
@@ -118,16 +119,16 @@ Main page styles
   }
 }
 //custom
-.img-carousel{
+.img-carousel {
   height: 35em;
   width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.carousel-caption{
+.carousel-caption {
   color: #fafdff;
-  font-size: 50px ;
+  font-size: 50px;
 }
 
 //______________
