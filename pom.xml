@@ -1127,7 +1127,7 @@
                 </pluginManagement>
             </build>
         </profile>
-        <profile>
+     <!--   <profile>
             <id>heroku</id>
             <build>
                 <plugins>
@@ -1180,7 +1180,7 @@
                 </plugins>
             </build>
         </profile>
-
+-->
         <profile>
             <id>heroku</id>
             <build>
