@@ -23,6 +23,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { T04JhDashboardModule } from 'app/Pages/dashboard/dashboard.module';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { MatSliderModule } from '@angular/material/slider';
     T04JhSharedModule,
     T04JhCoreModule,
     T04JhHomeModule,
+    T04JhDashboardModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     T04JhEntityModule,
     T04JhAppRoutingModule,

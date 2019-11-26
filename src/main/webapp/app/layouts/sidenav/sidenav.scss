@@ -5,7 +5,7 @@ mat-sidenav-container {
 
 mat-sidenav,
 mat-sidenav-content {
-  padding: 16px;
+  padding: 6px;
 }
 
 mat-sidenav {
@@ -13,12 +13,17 @@ mat-sidenav {
 
 .sidenavleft {
   background-color: #1976d2;
-  width: 11em;
+  width: 10em;
 }
 .sidenavRight {
   background-color: #1976d2;
   max-width: 2em;
 }
 .sidebar-divider {
-  border-top: 5px solid #f43e37;
+  border-top: 5px solid white;
+}
+
+a.nav-link {
+  font-weight: 400;
+  color: white;
 }

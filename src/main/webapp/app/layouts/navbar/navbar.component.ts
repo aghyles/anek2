@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -11,6 +11,7 @@ import { LoginModalService } from 'app/core/login/login-modal.service';
 import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { MatSidenav } from '@angular/material/sidenav';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'jhi-navbar',
@@ -26,7 +27,10 @@ export class NavbarComponent implements OnInit {
   version: string;
   @Input() inputSideNav: MatSidenav;
 
+  elem; // toogle fuul screan
+
   constructor(
+    @Inject(DOCUMENT) private document: any,
     private loginService: LoginService,
     private languageService: JhiLanguageService,
     private languageHelper: JhiLanguageHelper,
@@ -47,6 +51,8 @@ export class NavbarComponent implements OnInit {
     this.profileService.getProfileInfo().subscribe(profileInfo => {
       this.inProduction = profileInfo.inProduction;
       this.swaggerEnabled = profileInfo.swaggerEnabled;
+
+      this.elem = document.documentElement;
     });
   }
 
@@ -83,5 +89,37 @@ export class NavbarComponent implements OnInit {
 
   getImageUrl() {
     return this.isAuthenticated() ? this.accountService.getImageUrl() : null;
+  }
+
+  // custom full screan
+  openFullscreen() {
+    if (this.elem.requestFullscreen) {
+      this.elem.requestFullscreen();
+    } else if (this.elem.mozRequestFullScreen) {
+      /* Firefox */
+      this.elem.mozRequestFullScreen();
+    } else if (this.elem.webkitRequestFullscreen) {
+      /* Chrome, Safari and Opera */
+      this.elem.webkitRequestFullscreen();
+    } else if (this.elem.msRequestFullscreen) {
+      /* IE/Edge */
+      this.elem.msRequestFullscreen();
+    }
+  }
+
+  /* Close fullscreen */
+  closeFullscreen() {
+    if (this.document.exitFullscreen) {
+      this.document.exitFullscreen();
+    } else if (this.document.mozCancelFullScreen) {
+      /* Firefox */
+      this.document.mozCancelFullScreen();
+    } else if (this.document.webkitExitFullscreen) {
+      /* Chrome, Safari and Opera */
+      this.document.webkitExitFullscreen();
+    } else if (this.document.msExitFullscreen) {
+      /* IE/Edge */
+      this.document.msExitFullscreen();
+    }
   }
 }

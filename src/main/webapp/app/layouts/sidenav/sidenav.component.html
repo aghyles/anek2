@@ -16,6 +16,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="/dashboard" >
+                    <span>
+                        <fa-icon icon="chart-line"></fa-icon>
+                        <span jhiTranslate="global.menu.dashbord">Dashbord</span>
+                    </span>
+                    </a>
+                </li>
+
                 <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
                 <div class="sidebar-divider my-0"></div>
                 <!-- Custom Application Name = Suivi Athlète -->
@@ -72,19 +81,7 @@
                     </ul>
                 </li>
 
-                <li ngbDropdown class="nav-item dropdown pointer" display="dynamic" *ngIf="languages && languages.length > 1">
-                    <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="languagesnavBarDropdown">
-                    <span>
-                        <fa-icon icon="flag"></fa-icon>
-                        <span jhiTranslate="global.menu.language">Language</span>
-                    </span>
-                    </a>
-                    <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="languagesnavBarDropdown">
-                        <li *ngFor="let language of languages">
-                            <a class="dropdown-item" [jhiActiveMenu]="language" href="javascript:void(0);" (click)="changeLanguage(language);">{{language | findLanguageFromKey}}</a>
-                        </li>
-                    </ul>
-                </li>
+
 
             </ul>
         </div>
@@ -115,13 +112,10 @@
             <div *ngFor="let e of events">{{e}}</div>
         </div>-->
 
-        <div class="">
-            <div class="card jh-card">
+        <section id="page-container">
                 <router-outlet></router-outlet>
                 <router-outlet name="popup"></router-outlet>
-            </div>
-        </div>-->
-
+        </section>
     </mat-sidenav-content>
 </mat-sidenav-container>
 

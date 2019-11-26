@@ -4,6 +4,9 @@
 /* ==========================================================================
 Navbar
 ========================================================================== */
+.navbar-toggler {
+  margin-left: 3em;
+}
 
 .navbar-version {
   font-size: 0.65em;
@@ -16,8 +19,13 @@ Navbar
 }
 
 .navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+
   padding: 0.2rem 1rem;
   position: fixed;
+  color: white;
 
   ul.navbar-nav {
     .nav-item {
@@ -30,6 +38,9 @@ Navbar
   }
 }
 
+.navbar-title {
+  margin-left: 2em;
+}
 /* ==========================================================================
 Logo styles
 ========================================================================== */
